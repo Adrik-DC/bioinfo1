@@ -1,0 +1,10 @@
+Los temas que me interesaron fueron 'How Do We Compare Biological Sequences?' y 'Are There Fragile Regions in the Human Genome?'. 
+
+El primero habla sobre como se logro entender el codigo de peptidos y como ayudaron algoritmos de comparacion para encontar secciones especificas y nucleos para asi 
+determinar la sintesis de aminoacidos, tambien da el ejemplo del gen asociado a la fibrosis en el cromosoma 7, CFTR, y como comparando con bases de datos y con otras
+proteinas se llego a identificar la causa de la Fibrosis Quistica y como es una delescion en 3 nucleotidos que evitan el transporte entre membranas. Aprender a comparar
+secuencias, interpretar cambios y bases de datos es una habilidad que me gustaria aprender.
+
+El segundo video habla sobre una teoria donde defienden que el DNA tiene regiones especificas que son propensas a ser reordenadas y a sufrir cambios, las llamadas regiones
+fragils y hotspots, mediante el uso de datos existentes y de predicciones se llego a una validacion estadistica de la teoria y como los llamados bloques de sintenia, una 
+forma de ver los cromosomas X divididos en 11 bloques, y como estos bloques siguen una distribucion exponencial.   
