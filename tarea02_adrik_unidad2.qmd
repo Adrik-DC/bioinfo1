@@ -10,17 +10,17 @@ editor: visual
 
 Usa cromoforos colocados en la ultima base didesoxidada de nucleotidos del DNA y empieza a identificar bases dependiendo de el cromoforo unidp y de la longitud la longitud de onda es usada como metodo de solides.
 
-![](images/clipboard-3271566187.png)
+![](WhatsApp Image 2026-09-03 at 10.14.55 AM.jpeg)
 
 ## Illumina = 634,000 = 43.1%
 
 Usa PCR y una tecnologia especifica para anlcar promotores y crear closters para con los muchos DNA's en cada cluster poder identificar la secuencia tambien se usan cromoforos para ver cual se pega y asi sacar la secuencia complementaria. Los cromoforos se desprenden cuando se unen los nucelotidos y la senal es captada por las fotoggrafias consecutivas de la maquina. Illumina tembien puede darte secuencias forward y reverse haciendo lavados y uniendo promotores en ambos extremos. Un problema de Illumina es que la especificad es poca conforme se aumentan los ciclos o la longitud de la secuencia.
 
-![](images/clipboard-3916390307.png)
+![](WhatsApp Image 2026-09-03 at 10.14.56 AM.jpeg)
 
-![](images/clipboard-1571399291.png){width="333" height="473"}
+![](WhatsApp Image 2026-09-03 at 10.14.57 AM.jpeg){width="267"}
 
-## Ion Torrent = 66,500 = 4.5%
+## ![]()Ion Torrent = 66,500 = 4.5%
 
 Tiene bastantes erroes comparada con las predominantes, usa como una camara que transforma las senales en informacion, lee el cambio de Ph por la liberacion de H+ al unirse las cadenas de DNA, es bastante reapida (3h).
 
@@ -34,4 +34,4 @@ Detecta los cambios en la corriente e- al pasar el DNA por un nanoporo para pode
 
 ### ACTIVIDAD 2
 
-![](images/clipboard-1885681440.png)
+![](WhatsApp Image 2026-09-03 at 10.28.21 PM.jpeg)
