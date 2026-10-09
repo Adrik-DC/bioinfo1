@@ -1,0 +1,164 @@
+---
+title: "examen_parcial_1"
+format: html
+editor: visual
+---
+
+# 3ra parte examen parcial 1
+
+## Introduccion
+
+Se quiere observar distinta informacion sobre *S. cerevisiae*, usare el bioproject con ID PRJNA268110 y el genoma R64 asi como distintos medios de visualizacion y cuantificacion con comandos de la terminal.
+
+Toda la informacion se extrajo directamente de lso archivos descargados de ncbi bajo el bioproject y el uso de la terminal para cuantificar y visualizar la informacion requerida.
+
+## Contexto Biologico y Objetivo del Estudio
+
+Bioproject: PRJNA268110 *Saccharomyces cerevisiae* (brewer's yeast)
+
+El estudio analiza el estres replicativo inducido por la hidroxiurea (HU) cuasa roturas cromosomicas en celulas de levaduras. Se observo que que las roturas en doble cadena se observan cerca de genes que se activan en respuesta a HU. Los resultados apoyan un modelo en el que las roturas en doble cadena surgen cuando horquillas de replicación inestables entran en conflicto con procesos de transcripción activa, especialmente en genes inducidos por estrés.
+
+La pregunta del estudio fue: ¿Por qué las roturas cromosómicas ocurren en ciertos lugares del genoma y no en otros cuando la replicación del ADN se ve afectada?
+
+Los autores aparecen como Hoffman EA et al
+
+Se registro por Wenyi Feng, Biochemistry and Molecular Biology, SUNY Upstate Medical University el 20 de Noviembre del 2014
+
+## Datos Obtenidos
+
+| SRA | Tipo de Secuencicion | Paired/Single | Numero de secuencias | Longitud de secuencias | Tamaño del archivo |
+|------------|------------|------------|------------|------------|------------|
+| SRR165854 | 1 ILLUMINA (Illumina MiSeq) run | Paired | 3,438,388 | Una media de 75 bp | 741 M |
+| SRR165855 | 1 ILLUMINA (Illumina MiSeq) run | Paired | 2,090,805 | Una media de 75 bp | 449 M |
+| SRR165856 | 1 ILLUMINA (Illumina MiSeq) run | Paired | 2,428,934 | Una media de 75 bp | 522 M |
+| SRR165857 | 1 ILLUMINA (Illumina MiSeq) run | Paired | 4,452,257 | Una media de 75 bp | 960 M |
+| SRR165858 | 1 ILLUMINA (Illumina MiSeq) run | Paired | 6,080,904 | Una media de 75 bp | 1.3 G |
+| SRR165859 | 1 ILLUMINA (Illumina MiSeq) run | Paired | 4,037,197 | Una media de 75 bp | 870 M |
+| SRR165860 | 1 ILLUMINA (Illumina MiSeq) run | Paired | 3,317,701 | Una media de 75 bp | 715 M |
+| SRR165861 | 1 ILLUMINA (Illumina MiSeq) run | Paired | 4,961,938 | Una media de 74 \~ 75 bp | 1.1 G |
+
+La dferencia fundamental es jerarquica, un **BioProject** es todo el estudio, **BioSabmple** describ el material biologico, los **SRA** **Experiment** detallan al estrategia de secuenciacion aplicada al material y las **SRA** **RUN** son los archivos de las lecturas generados por la secuencoacion.
+
+En los SRA, de este bioproject, tenemos 8 secuencias pareadas, osease 16 archivos .fastq, con un formato como este:
+
+@SRR1658455.1 1 length=75 CTTTGGAATACCAACATCCCAACCCTTGATGACTTGGCCGACACCGATGTTACATTGGAATGGAGAGCCCCTGTC +SRR1658455.1 1 length=75 6AAC---,C,CE9\<C8FFGGGGGGGGGGFGGEEFE,,CC:78+@C++\@,EF9E9CC,,,,:,,,,,,9668C,C\@
+
+Los archivos .fastq se componen de 4 secciones o renglones,
+
+1.  El identificador (1)
+
+    1.  Describe el ID del la secuencia, empezando por lo general con @ y da la longitud de esa secuencia.
+
+2.  La secuencia (2)
+
+    1.  Las bases y el orden de la cadena de DNA secuenciada.
+
+3.   el simbolo o indicador (3)
+
+    1.  Indica la direccion de la cadena secuenciada
+
+4.   La confianza (4)
+
+    1.  Son simbolos que permiten identificar que el nivel de confianza de la lectura.
+
+## Fastqc
+
+### SRR165854
+
+![](images/clipboard-1482616480.jpeg)
+
+De acuerdo a **fastqc** para SRR165854, la cualidad de las secuencias es buena, con un rango de longitud de 35 \~ 75 bp, un cantidad de bases de 256.2 Mbp y un contenido de %GC de 42.
+
+### SRR165855
+
+![](images/clipboard-664134540.png)
+
+SRR165855, la cualidad de las secuencias es buena, con un rango de longitud de 35 \~ 75 bp, un cantidad de bases de 155.8 Mbp y un contenido de %GC de 42.
+
+### SRR165856
+
+![](images/clipboard-388990604.jpeg)
+
+SRR165856, la cualidad de las secuencias es buena, con un rango de longitud de 35 \~ 75 bp, un cantidad de bases de 180.9 Mbp y un contenido de %GC de 42.
+
+### SRR165857
+
+![](images/clipboard-2047406872.jpeg)
+
+SRR165857, la cualidad de las secuencias es buena, con un rango de longitud de 35 \~ 75 bp, un cantidad de bases de 331.8 Mbp y un contenido de %GC de 42.
+
+### SRR165858
+
+![](images/clipboard-3985499023.jpeg)
+
+SRR165858, la cualidad de las secuencias es buena, con un rango de longitud de 35 \~ 75 bp, un cantidad de bases de 453.1 Mbp y un contenido de %GC de 42.
+
+### SRR165859
+
+![](images/clipboard-1917845695.jpeg)
+
+SRR165859, la cualidad de las secuencias es buena, con un rango de longitud de 35 \~ 75 bp, un cantidad de bases de 300.8 Mbp y un contenido de %GC de 42.
+
+### SRR165860
+
+![](images/clipboard-2458979957.jpeg)
+
+SRR165860, la cualidad de las secuencias es buena, con un rango de longitud de 35 \~ 75 bp, un cantidad de bases de 247.2 Mbp y un contenido de %GC de 42.
+
+### SRR165861
+
+![](images/clipboard-4152915732.jpeg)
+
+SRR165861, la cualidad de las secuencias es buena, con un rango de longitud de 35 \~ 75 bp, un cantidad de bases de 369.7 Mbp y un contenido de %GC de 42.
+
+## Genoma ensamblado 
+
+El genoma que yo use fue el R64 con id GCF_000146045.2
+
+Con fecha de el 17 de Diciembre del 2014.
+
+Tiene un tamaño de 12.1 Mb.
+
+Tiene 16 lecturas, las cuales corresponden a los 16 cromosomas de *Saccharomyces cerevisiae*.
+
+## Codigo Utilizado 
+
+Se tiene en cuenta que el directorio utilizado no tenia mas que los archivos para este proyecto, en caso de tener mas archivos necesitara mas discriminantes a la hora de correr los comandos.
+
+Descarga
+
+- prefetch SRR1658454
+
+- prefetch SRR1658455
+
+- prefetch SRR1658456
+
+- prefetch SRR1658457
+
+- prefetch SRR1658458
+
+- prefetch SRR1658459
+
+- prefetch SRR1658460
+
+- prefetch SRR1658461
+
+- datasets download genome accession GCF_000146045.2 --include genome
+
+Conversion a .fastq
+
+- fastq-dump \*
+
+Visualizacion
+
+- grep -c '\^\@SRR' \*.fasta
+
+- grep -c '\^\>' \*.fna
+
+- head -4 \*.fasta
+
+- head -4 \*.fna
+
+fastqc
+
+- fastqc \*1.fastq
