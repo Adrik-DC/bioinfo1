@@ -1,0 +1,116 @@
+---
+title: "Composición microbiana de la rizosfera"
+author: "Adrik"
+date: today
+lang: es
+format:
+  html:
+    toc: true
+    code-fold: true
+execute:
+  warning: false
+  message: false
+---
+
+# Introducción
+
+Este reporte analiza la **composición taxonómica** de muestras de rizosfera.
+
+## Pregunta de investigación
+
+¿Observamos diferencias entre las *plantas hospederas*?
+
+- Primer objetivo.
+- Segundo objetivo.
+
+[Documentación de Quarto](https://quarto.org/docs/)
+
+```{r}
+#| eval: false
+#| label: fig-ejemplo
+#| fig-cap: "Ejemplo de una figura generada desde R"
+
+plot(1:5, (1:5)^2, pch = 19)
+```
+
+```{r}
+#| label: setup
+#| include: true
+#| message: false
+#| warning: false
+
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(paletteer)
+library(kableExtra)
+
+metadata_riz <- read_csv("data_raw/datos_rizosfera/metadata_rizosfera.csv")
+totales_muestra <- read_tsv("resultados/tot_muestras.tsv")
+generos_5 <- read_tsv("resultados/generos_5.tsv")
+filos_5 <- read_tsv("resultados/filos_5.csv")
+```
+
+```{r}
+#| label: tbl-muestras-r
+
+resumen_hospederos <- metadata_riz %>%
+  count(host_name, name = "numero_muestras") %>%
+  arrange(desc(numero_muestras))
+
+knitr::kable(
+  resumen_hospederos,
+  col.names = c("Planta hospedera", "Número de muestras"),
+  caption = "Número de muestras por planta hospedera"
+)
+```
+
+```{r}
+knitr::kable(
+  head(resumen_hospederos, 10),
+  col.names = c("Planta hospedera", "Número de muestras"),
+  align = c("l", "c"),
+  caption = "Número de muestras por planta hospedera"
+)
+```
+
+```{r}
+tabla_proporciones <- resumen_hospederos %>%
+  mutate(
+    proporcion = numero_muestras / sum(numero_muestras),
+    porcentaje = proporcion * 100
+  ) %>%
+  select(host_name, numero_muestras, porcentaje)
+
+knitr::kable(
+  tabla_proporciones,
+  col.names = c("Planta hospedera", "Muestras", "Porcentaje (%)"),
+  digits = 2,
+  align = c("l", "c", "r"),
+  caption = "Distribución porcentual de las muestras por planta"
+)
+```
+
+```{r}
+#| label: fig-profundidad
+#| fig-cap: "Total de lecturas por muestra, según planta hospedera"
+#| fig-width: 10
+#| fig-height: 5
+
+profundidad <- totales_muestra %>%
+  left_join(
+    metadata_riz %>% select(sample_id, host_name),
+    by = "sample_id"
+  )
+
+ggplot(profundidad, aes(x = host_name, y = `tot_lec <- sum(conteo)`)) +
+  geom_boxplot(fill = "#5A9A91", alpha = 0.8) +
+  coord_flip() +
+  labs(
+    x = "Planta hospedera",
+    y = "Total de lecturas",
+    title = "Profundidad de lectura por planta"
+  ) +
+  theme_minimal()
+```
